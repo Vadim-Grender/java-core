@@ -1,0 +1,6 @@
+FROM bellsoft/liberica-openjdk-alpine
+COPY ./src ./src
+RUN mkdir ./out
+RUN javac -sourcepath ./src -d out src/calculator.Input.java
+CMD java -classpath ./out calculator.Input
+
